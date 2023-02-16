@@ -40,18 +40,19 @@ if not status then
 end
 if auto_updater == true then error("Invalid auto-updater lib. Please delete your Stand/Lua Scripts/lib/auto-updater.lua and try again") end
 
-util.require_natives(1651208000)
-
-if not SCRIPT_SILENT_START and players.get_name(players.user()) ~= "UNKNOWN" then
-    util.toast("Hello, " .. players.get_name(players.user()) .. "! \nWelcome To TDODScript!\n" .. "Check Extra's | To Join The Discord!")
-end
-
 -- Run Auto Update
 auto_updater.run_auto_update({
     source_url="https://raw.githubusercontent.com/TDODYT/TDODScript/main/TDODScript.lua",
     script_relpath=SCRIPT_RELPATH,
     verify_file_begins_with="--"
 })
+
+
+util.require_natives(1651208000)
+
+if not SCRIPT_SILENT_START and players.get_name(players.user()) ~= "UNKNOWN" then
+    util.toast("Hello, " .. players.get_name(players.user()) .. "! \nWelcome To TDODScript!\n" .. "Check Extra's | To Join The Discord!")
+end
 
 
 root = menu.my_root()
